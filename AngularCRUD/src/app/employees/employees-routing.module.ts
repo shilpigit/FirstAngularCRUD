@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 import { ListEmployeesComponent } from './list-employees.component';
 import { CreateEmployeeComponent } from './create-employee.component';
@@ -15,10 +16,10 @@ const routes: Routes = [
 ]
 
 @NgModule({
-  declarations: [],
+  declarations: [ListEmployeesComponent,CreateEmployeeComponent],
   imports: [
     CommonModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),FormsModule
   ],
   exports:[RouterModule]
 })
