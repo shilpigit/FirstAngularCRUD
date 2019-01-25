@@ -2,9 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 
-import { ListEmployeesComponent } from './employees/list-employees.component';
-import { CreateEmployeeComponent } from './employees/create-employee.component';
-
+import { ListEmployeesComponent } from './list-employees.component';
+import { CreateEmployeeComponent } from './create-employee.component';
 
 
 const routes: Routes = [ 
@@ -16,11 +15,11 @@ const routes: Routes = [
 ]
 
 @NgModule({
- //declarations: [ListEmployeesComponent,CreateEmployeeComponent],
+  declarations: [],
   imports: [
     CommonModule,
     RouterModule.forRoot(routes)
   ],
   exports:[RouterModule]
 })
-export class AppRoutingModule { }
+export class EmployeesRoutingModule { }
