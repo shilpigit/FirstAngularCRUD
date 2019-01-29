@@ -1,4 +1,4 @@
-<form #employeeForm="ngForm">
+<form #employeeForm="ngForm" (ngSubmit)=saveEmployee()>
     <div class="panel panel-primary">
         <div class="panel-heading">
             <h3 class="panel-title">
@@ -8,7 +8,7 @@
         <div class="panel-body">
             <div class="form-group">
                 <label for="fullname">Full Name</label>
-                <input required type="text" id="fullname" class="form-control" ngModel name="firstName" #employeeFullName>
+                <input required type="text" id="fullname" class="form-control" [(ngModel)]="employee.name" name="firstName">
             </div>
             <div class="form-group">
                 <label for="email">Email</label>
@@ -17,7 +17,7 @@
         </div>
 
         <div class="panel-footer">
-            <button type="submit" class="button button-primary" (click)="saveEmployee(employeeFullName)">Save</button>
+            <button type="submit" class="button button-primary">Save</button>
         </div>
     </div>
 </form>

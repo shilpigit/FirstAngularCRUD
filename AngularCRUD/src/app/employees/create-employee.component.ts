@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Employee } from '../models/employee.model';
 import { NgForm } from '@angular/forms';
+import { EmployeeSharedService } from '../employee-shared.service';
 
 @Component({
   selector: 'app-create-employee',
@@ -9,13 +10,26 @@ import { NgForm } from '@angular/forms';
 })
 export class CreateEmployeeComponent implements OnInit {
 
-  constructor() { }
+  employee: Employee = {
+    id: null,
+    name: null,
+    gender: null,
+    email:null,
+    phoneNumber:null,
+    contactPreference: null,
+    dateOfBirth: new Date,
+    department: null,
+    IsActive: null,
+    photoPath: null
+  };
 
-  ngOnInit() {
+  constructor(public _EmployeeSharedService: EmployeeSharedService) { }
+
+  ngOnInit() {   
   }
 
-  public saveEmployee(emp: NgForm):void{
-    alert(emp.name);
+  public saveEmployee(emp: Employee):void{    
+   this._EmployeeSharedService.setEmployee(this.employee);
   }
 
 }

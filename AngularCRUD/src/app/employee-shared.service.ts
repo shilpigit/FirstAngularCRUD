@@ -1,17 +1,20 @@
 import { Injectable } from '@angular/core';
+import { Employee } from './models/employee.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class EmployeeSharedService {
+  
+  public emp: Employee[] = [];
 
   constructor() { }
-  public emp: any;
-  public setEmployee(employee: any): void {
+ 
+  public setEmployee(employee: Employee): void {
     this.emp.push(employee);
   }
 
-  public getEmployee(): any{
+  public getEmployee(): Employee[]{
     return this.emp;
   }
 }
